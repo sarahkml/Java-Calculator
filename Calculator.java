@@ -12,25 +12,23 @@ public class Calculator extends JFrame implements ActionListener {
         setTitle("Calculator");
         setSize(400, 550);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BorderLayout(10, 10)); // spacing around components
-        getContentPane().setBackground(new Color(240, 248, 255)); // soft background
+        setLayout(new BorderLayout(10, 10)); 
+        getContentPane().setBackground(new Color(240, 248, 255)); 
 
-        // Display field inside a panel for padding
+       
         JPanel displayPanel = new JPanel(new BorderLayout());
-        displayPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15)); // margin around text field
+        displayPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
         textField = new JTextField();
         textField.setEditable(false);
         textField.setFont(new Font("Arial", Font.BOLD, 28));
-        textField.setPreferredSize(new Dimension(350, 70)); // preferred size works with layouts
-        textField.setBackground(new Color(255, 228, 225)); // soft pink
-        textField.setHorizontalAlignment(JTextField.RIGHT); // numbers align to the right
-        textField.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3, true)); // thick rounded border
-
+        textField.setPreferredSize(new Dimension(350, 70)); 
+        textField.setBackground(new Color(255, 228, 225));
+        textField.setHorizontalAlignment(JTextField.RIGHT); 
+        textField.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3, true)); 
         displayPanel.add(textField, BorderLayout.CENTER);
         add(displayPanel, BorderLayout.NORTH);
 
-        // Buttons
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(4, 4, 12, 12));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 15, 15, 15));
@@ -45,9 +43,9 @@ public class Calculator extends JFrame implements ActionListener {
         for (String text : buttons) {
             JButton button = new JButton(text);
             button.setFont(new Font("Arial", Font.BOLD, 22));
-            button.setBackground(new Color(224, 255, 255)); // light cyan
-            button.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 2, true)); // rounded border
-            button.setFocusPainted(false); // removes blue focus outline
+            button.setBackground(new Color(224, 255, 255));
+            button.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 2, true));
+            button.setFocusPainted(false); 
             button.addActionListener(this);
             panel.add(button);
         }
@@ -94,3 +92,4 @@ public class Calculator extends JFrame implements ActionListener {
         });
     }
 }
+
